@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700;900&family=Inter:wght@300;400;500;600&display=swap');
+
+
+.text-shadow-soft {
+  text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.55);
+}
+
+.text-shadow-strong {
+  text-shadow: 0px 4px 18px rgba(0, 0, 0, 0.85);
+}
