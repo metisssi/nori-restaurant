@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Flame } from "lucide-react";
 
 const Menu = () => {
   const menuItems = [
@@ -30,11 +31,37 @@ const Menu = () => {
 
   return (
     <section
-      className="relative py-20 px-4 bg-gradient-to-b from-black via-gray-900/80 to-white/30 overflow-hidden transition-colors duration-1000"
+      id="menu"
+      className="relative py-20 px-4 bg-gradient-to-b from-black via-red-950/30 to-black overflow-hidden transition-colors duration-1000"
     >
-      {/* Glow blobs */}
-      <div className="absolute -top-40 -left-40 w-[30rem] h-[30rem] bg-white/10 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute -bottom-40 -right-40 w-[30rem] h-[30rem] bg-black/30 rounded-full blur-2xl animate-pulse delay-1000"></div>
+      {/* Fire/Red Glow blobs */}
+      <div className="absolute -top-40 -left-40 w-[40rem] h-[40rem] bg-red-600/20 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute top-1/3 -right-40 w-[35rem] h-[35rem] bg-orange-600/15 rounded-full blur-3xl animate-pulse delay-500"></div>
+      <div className="absolute -bottom-40 left-1/4 w-[30rem] h-[30rem] bg-red-800/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
+      
+      {/* Animated fire particles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 bg-orange-500/40 rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              y: [0, -100, 0],
+              opacity: [0, 1, 0],
+              scale: [0, 1.5, 0],
+            }}
+            transition={{
+              duration: 3 + Math.random() * 2,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+            }}
+          />
+        ))}
+      </div>
 
       <div className="max-w-7xl mx-auto flex flex-col items-center relative z-10 space-y-16">
         {/* HEADER */}
@@ -44,15 +71,23 @@ const Menu = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h5 className="uppercase tracking-widest font-semibold text-gray-400">
-            Naše menu
-          </h5>
+          <div className="flex items-center justify-center space-x-3">
+            <Flame className="text-orange-500 animate-pulse" size={28} />
+            <h5 className="uppercase tracking-widest font-semibold text-orange-400">
+              Our Menu
+            </h5>
+            <Flame className="text-orange-500 animate-pulse" size={28} />
+          </div>
+          
           <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight text-white">
-            Ochutnejte to nejlepší
+            Taste the <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 animate-pulse">
+              Fire
+            </span> Within
           </h2>
+          
           <p className="max-w-2xl mx-auto text-gray-300 text-lg leading-relaxed">
-            Prohlédněte si náš výběr sushi, ramen a dalších asijských specialit. 
-            Vše připraveno čerstvě a s láskou.
+            Explore our selection of sushi, ramen, and other Asian specialties. 
+            Everything prepared fresh with <span className="text-orange-500 font-semibold">passion and flames</span>.
           </p>
         </motion.div>
 
@@ -61,23 +96,47 @@ const Menu = () => {
           {menuItems.map((item, index) => (
             <motion.div
               key={index}
-              className="group relative bg-gradient-to-br from-gray-800 to-black rounded-3xl overflow-hidden shadow-xl border border-white/10 transition-transform duration-500 hover:scale-105"
+              className="group relative bg-gradient-to-br from-gray-900 via-red-950/30 to-black rounded-3xl overflow-hidden shadow-2xl border border-red-900/20 transition-all duration-500 hover:scale-105 hover:border-orange-500/50"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: index * 0.2 }}
+              whileHover={{ 
+                boxShadow: "0 0 30px rgba(249, 115, 22, 0.4)",
+              }}
             >
+              {/* Fire glow effect on hover */}
+              <div className="absolute inset-0 bg-gradient-to-t from-red-600/0 via-orange-600/0 to-red-600/0 group-hover:from-red-600/10 group-hover:via-orange-600/5 group-hover:to-red-600/10 transition-all duration-500 rounded-3xl"></div>
+              
               <div className="relative h-64 w-full overflow-hidden rounded-t-3xl">
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover object-center transform group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                {/* Fire overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-red-950/80 via-black/40 to-transparent group-hover:from-red-900/90 transition-all duration-500" />
+                
+                {/* Animated fire border on top of image */}
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-              <div className="p-6 text-center space-y-2">
-                <h3 className="text-xl font-bold text-white">{item.name}</h3>
-                <p className="text-gray-300 text-sm">{item.description}</p>
-                <span className="block text-lg font-semibold text-white mt-2">{item.price}</span>
+              
+              <div className="p-6 text-center space-y-2 relative z-10">
+                <h3 className="text-xl font-bold text-white group-hover:text-orange-400 transition-colors duration-300">
+                  {item.name}
+                </h3>
+                <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-300">
+                  {item.description}
+                </p>
+                <div className="pt-2">
+                  <span className="inline-block px-4 py-1.5 text-lg font-semibold bg-gradient-to-r from-red-600/30 to-orange-600/30 text-orange-400 rounded-full border border-orange-500/30 group-hover:border-orange-500/60 group-hover:shadow-lg group-hover:shadow-orange-500/20 transition-all duration-300">
+                    {item.price}
+                  </span>
+                </div>
+              </div>
+
+              {/* Corner accent */}
+              <div className="absolute top-4 right-4 w-8 h-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <Flame className="text-orange-500" size={24} />
               </div>
             </motion.div>
           ))}
@@ -86,14 +145,20 @@ const Menu = () => {
         {/* BUTTON TO DOWNLOAD FULL MENU */}
         <motion.button
           onClick={() => window.open("/menu.pdf", "_blank")}
-          className="mt-12 inline-flex items-center justify-center px-8 py-4 bg-white text-black font-semibold rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 relative"
+          className="mt-12 inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-red-600 via-orange-600 to-red-600 text-white font-semibold rounded-full shadow-lg hover:shadow-2xl hover:shadow-orange-500/50 transition-all hover:scale-105 relative overflow-hidden group"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Kompletní menu (PDF)
-          <span className="ml-2 text-xl">→</span>
-          <span className="absolute inset-0 rounded-full bg-white/20 blur-2xl animate-pulse"></span>
+          {/* Animated gradient overlay */}
+          <span className="absolute inset-0 bg-gradient-to-r from-orange-600 via-red-600 to-orange-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+          
+          <Flame className="mr-2 relative z-10" size={20} />
+          <span className="relative z-10">Full Menu (PDF)</span>
+          <span className="ml-2 text-xl relative z-10">→</span>
+          
+          {/* Fire glow */}
+          <span className="absolute inset-0 rounded-full bg-orange-500/30 blur-2xl animate-pulse"></span>
         </motion.button>
       </div>
     </section>
