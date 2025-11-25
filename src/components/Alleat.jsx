@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
+import { useLanguage } from "../context/Languagecontext";
 
 const Alleat = () => {
+  const { t } = useLanguage();
+  
   const openPdf = () => {
-    window.open("/menu.pdf", "_blank"); // replace with your PDF path
+    window.open("/menu.pdf", "_blank");
   };
 
   return (
@@ -24,22 +27,22 @@ const Alleat = () => {
           transition={{ duration: 0.8 }}
         >
           <h5 className="uppercase tracking-widest font-semibold text-red-400">
-            All You Can Eat
+            {t.alleat.title}
           </h5>
 
           <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight">
-            Neomezený <span className="bg-gradient-to-r from-red-500 to-yellow-400 bg-clip-text text-transparent">gurmánský</span> zážitek
+            {t.alleat.heading} <span className="bg-gradient-to-r from-red-500 to-yellow-400 bg-clip-text text-transparent">{t.alleat.headingAccent}</span> {t.alleat.heading2}
           </h2>
 
           <p className="text-lg leading-relaxed text-gray-300">
-            Vyberte si z našeho širokého výběru sushi a asijských specialit. Užijte si autentické chutě v elegantním prostředí.
+            {t.alleat.description}
           </p>
 
           <button
             onClick={openPdf}
             className="inline-flex items-center justify-center px-7 py-3 bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold rounded-full shadow-lg hover:shadow-2xl hover:from-red-500 hover:to-red-600 transition-all hover:scale-105 relative border border-red-500/30"
           >
-            Zobrazit menu (PDF)
+            {t.alleat.button}
             <span className="ml-2 text-xl">→</span>
           </button>
 
@@ -62,8 +65,8 @@ const Alleat = () => {
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center space-y-4 p-8">
                     <div className="text-6xl">🍣</div>
-                    <h3 className="text-3xl font-bold text-white">All You Can Eat</h3>
-                    <p className="text-red-300">Neomezené možnosti čekají na vás</p>
+                    <h3 className="text-3xl font-bold text-white">{t.alleat.subtitle}</h3>
+                    <p className="text-red-300">{t.alleat.subtitle2}</p>
                   </div>
                 </div>
               </div>

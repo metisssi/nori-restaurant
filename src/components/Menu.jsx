@@ -1,29 +1,32 @@
 import { motion } from "framer-motion";
 import { Flame } from "lucide-react";
+import { useLanguage } from "../context/Languagecontext";
 
 const Menu = () => {
+  const { t } = useLanguage();
+  
   const menuItems = [
     {
-      name: "Sushi Set Deluxe",
-      description: "Mix of nigiri, maki, and sashimi, fresh daily.",
+      name: t.menu.items.sushi.name,
+      description: t.menu.items.sushi.description,
       price: "499 Kč",
       image: "/sushi-deluxe.jpg",
     },
     {
-      name: "Tempura Shrimp",
-      description: "Crispy tempura shrimp with dipping sauce.",
+      name: t.menu.items.tempura.name,
+      description: t.menu.items.tempura.description,
       price: "259 Kč",
       image: "/tempura.jpg",
     },
     {
-      name: "Ramen Special",
-      description: "Rich broth with noodles, pork, egg, and vegetables.",
+      name: t.menu.items.ramen.name,
+      description: t.menu.items.ramen.description,
       price: "349 Kč",
       image: "/ramen.jpg",
     },
     {
-      name: "Veggie Roll",
-      description: "Fresh vegetables rolled in seasoned rice and nori.",
+      name: t.menu.items.veggie.name,
+      description: t.menu.items.veggie.description,
       price: "199 Kč",
       image: "/veggie-roll.jpg",
     },
@@ -74,20 +77,19 @@ const Menu = () => {
           <div className="flex items-center justify-center space-x-3">
             <Flame className="text-orange-500 animate-pulse" size={28} />
             <h5 className="uppercase tracking-widest font-semibold text-orange-400">
-              Our Menu
+              {t.menu.title}
             </h5>
             <Flame className="text-orange-500 animate-pulse" size={28} />
           </div>
           
           <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight text-white">
-            Taste the <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 animate-pulse">
-              Fire
-            </span> Within
+            {t.menu.heading} <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 animate-pulse">
+              {t.menu.headingAccent}
+            </span> {t.menu.heading2}
           </h2>
           
           <p className="max-w-2xl mx-auto text-gray-300 text-lg leading-relaxed">
-            Explore our selection of sushi, ramen, and other Asian specialties. 
-            Everything prepared fresh with <span className="text-orange-500 font-semibold">passion and flames</span>.
+            {t.menu.description}
           </p>
         </motion.div>
 
@@ -154,7 +156,7 @@ const Menu = () => {
           <span className="absolute inset-0 bg-gradient-to-r from-orange-600 via-red-600 to-orange-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
           
           <Flame className="mr-2 relative z-10" size={20} />
-          <span className="relative z-10">Full Menu (PDF)</span>
+          <span className="relative z-10">{t.menu.button}</span>
           <span className="ml-2 text-xl relative z-10">→</span>
           
           {/* Fire glow */}

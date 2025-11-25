@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import { useLanguage } from "../context/Languagecontext";
 
 const Main = () => {
+  const { t } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
@@ -44,16 +46,16 @@ const Main = () => {
           <div className="order-1 lg:order-2 bg-gradient-to-br from-red-950 via-black to-red-900 text-white rounded-3xl p-8 lg:p-12 flex flex-col justify-between shadow-2xl border border-red-800/30 transform hover:scale-[1.02] transition-transform duration-300">
             <div className="space-y-6">
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight">
-                Zažijte <span className="bg-gradient-to-r from-red-400 to-yellow-300 bg-clip-text text-transparent">jedinečný</span> gastronomický zážitek v Nori
+                {t.main.heading} <span className="bg-gradient-to-r from-red-400 to-yellow-300 bg-clip-text text-transparent">{t.main.headingAccent}</span> {t.main.heading2}
               </h1>
               <p className="text-lg text-gray-300 leading-relaxed">
-                Vítejte v restauraci Nori v srdci Prahy, kde se setkávají asijské kulinářské tradice s moderními inovacemi.
+                {t.main.description}
               </p>
               <button
                 onClick={() => scrollToSection("about")}
                 className="relative inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold rounded-full shadow-lg hover:shadow-2xl hover:from-red-500 hover:to-red-600 transition-all duration-300 group"
               >
-                <span>Více o nás</span>
+                <span>{t.main.aboutButton}</span>
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
@@ -70,7 +72,7 @@ const Main = () => {
                 onClick={() => scrollToSection("reservation")}
                 className="absolute bottom-6 left-6 inline-flex items-center space-x-2 px-5 py-2.5 bg-gradient-to-r from-yellow-400 to-red-500 text-black rounded-full font-bold hover:from-yellow-300 hover:to-red-400 shadow-md transition-all duration-300"
               >
-                <span>Rezervace</span>
+                <span>{t.main.reserveButton}</span>
                 <ArrowRight size={18} />
               </button>
             </div>

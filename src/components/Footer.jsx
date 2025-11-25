@@ -1,7 +1,10 @@
 import React from "react";
 import { Facebook, Instagram, Twitter } from "lucide-react";
+import { useLanguage } from "../context/Languagecontext";
 
 const Footer = () => {
+  const { t } = useLanguage();
+  
   return (
     <footer className="relative py-16 px-4 bg-gradient-to-t from-black via-red-950/30 to-gray-900 text-white overflow-hidden border-t border-red-900/30">
       {/* Glow blobs - RED */}
@@ -15,25 +18,25 @@ const Footer = () => {
             Nori Restaurant
           </h2>
           <p className="text-gray-400 max-w-sm">
-            Autentický asijský gurmánský zážitek v srdci Prahy. Přijďte ochutnat naše speciality.
+            {t.footer.description}
           </p>
         </div>
 
         {/* QUICK LINKS */}
         <div>
-          <h3 className="text-xl font-semibold mb-4 text-red-400">Rychlé odkazy</h3>
+          <h3 className="text-xl font-semibold mb-4 text-red-400">{t.footer.quickLinks}</h3>
           <ul className="space-y-2 text-gray-300">
-            <li><a href="#alleat" className="hover:text-red-400 transition-colors">All You Can Eat</a></li>
-            <li><a href="#menu" className="hover:text-red-400 transition-colors">Menu</a></li>
-            <li><a href="#event" className="hover:text-red-400 transition-colors">Události</a></li>
-            <li><a href="#gallery" className="hover:text-red-400 transition-colors">Galerie</a></li>
-            <li><a href="#reservation" className="hover:text-red-400 transition-colors">Rezervace</a></li>
+            <li><a href="#alleat" className="hover:text-red-400 transition-colors">{t.nav.allEat}</a></li>
+            <li><a href="#menu" className="hover:text-red-400 transition-colors">{t.nav.menu}</a></li>
+            <li><a href="#event" className="hover:text-red-400 transition-colors">{t.nav.event}</a></li>
+            <li><a href="#gallery" className="hover:text-red-400 transition-colors">{t.nav.gallery}</a></li>
+            <li><a href="#reservation" className="hover:text-red-400 transition-colors">{t.nav.contact}</a></li>
           </ul>
         </div>
 
         {/* SOCIALS */}
         <div>
-          <h3 className="text-xl font-semibold mb-4 text-red-400">Sledujte nás</h3>
+          <h3 className="text-xl font-semibold mb-4 text-red-400">{t.footer.followUs}</h3>
           <div className="flex space-x-4 text-gray-300">
             <a href="#" className="hover:text-red-400 transition-colors"><Facebook size={24} /></a>
             <a href="#" className="hover:text-red-400 transition-colors"><Instagram size={24} /></a>
@@ -44,7 +47,7 @@ const Footer = () => {
 
       {/* COPYRIGHT */}
       <div className="mt-16 border-t border-red-900/30 pt-6 text-center text-gray-400 text-sm relative z-10">
-        &copy; {new Date().getFullYear()} Nori Restaurant. Všechna práva vyhrazena.
+        &copy; {new Date().getFullYear()} Nori Restaurant. {t.footer.copyright}
       </div>
     </footer>
   );

@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useLanguage } from "../context/Languagecontext";
 
 const images = [
   "/gallery1.jpg",
@@ -13,6 +14,8 @@ const images = [
 ];
 
 const Gallery = () => {
+  const { t } = useLanguage();
+  
   return (
     <section
       id="gallery"
@@ -30,14 +33,13 @@ const Gallery = () => {
         transition={{ duration: 0.8 }}
       >
         <h5 className="uppercase tracking-widest font-semibold text-red-400 mb-2">
-          Galerie
+          {t.gallery.title}
         </h5>
         <h2 className="text-4xl sm:text-5xl font-extrabold text-white">
-          Uchvátíme vás našimi <span className="bg-gradient-to-r from-red-500 to-yellow-400 bg-clip-text text-transparent">zážitky</span>
+          {t.gallery.heading} <span className="bg-gradient-to-r from-red-500 to-yellow-400 bg-clip-text text-transparent">{t.gallery.headingAccent}</span>
         </h2>
         <p className="text-gray-300 max-w-2xl mx-auto mt-4">
-          Prohlédněte si fotky našich specialit, interiéru a akcí. Každý moment
-          je připraven s láskou a elegancí.
+          {t.gallery.description}
         </p>
       </motion.div>
 
@@ -57,7 +59,7 @@ const Gallery = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-red-900/70 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center">
               <span className="text-white font-bold text-lg mb-4">
-                Foto {index + 1}
+                {t.gallery.photo} {index + 1}
               </span>
             </div>
           </motion.div>
@@ -70,7 +72,7 @@ const Gallery = () => {
         className="mt-16 mx-auto block px-8 py-4 bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold rounded-full shadow-lg hover:shadow-2xl transition-all hover:scale-105 relative border border-red-500/30"
         whileHover={{ scale: 1.05 }}
       >
-        Zpět nahoru ↑
+        {t.gallery.button}
       </motion.button>
     </section>
   );
