@@ -39,8 +39,14 @@ const Navbar = () => {
   };
 
   const flagCountries = {
-    cz: "CZ",
+    cs: "CZ",
     en: "GB",
+    ru: "RU",
+  };
+
+  const languageDisplayNames = {
+    cs: "CZ",
+    en: "EN",
     ru: "RU",
   };
 
@@ -82,7 +88,7 @@ const Navbar = () => {
                 className={`${gradientBtn} flex items-center space-x-2`}
               >
                 <ReactCountryFlag countryCode={flagCountries[language]} svg style={{ width: "24px", height: "16px" }} />
-                <span>{language.toUpperCase()}</span>
+                <span>{languageDisplayNames[language]}</span>
                 <span>▼</span>
               </button>
 
@@ -100,7 +106,7 @@ const Navbar = () => {
                       }`}
                     >
                       <ReactCountryFlag countryCode={flagCountries[lang]} svg style={{ width: "24px", height: "16px" }} />
-                      <span>{lang.toUpperCase()}</span>
+                      <span>{languageDisplayNames[lang]}</span>
                     </button>
                   ))}
                 </div>
@@ -127,12 +133,38 @@ const Navbar = () => {
 
           {/* Mobile Logo */}
           <Link to="/">
-            <img src="/nori_logo_transparent.png" alt="Nori Logo" className="h-16 w-auto" />
+            <img src="/nori_logo_transparent.png" alt="Nori Logo" className="h-24 w-auto" />
           </Link>
 
           {/* Mobile always-show flag */}
-          <div>
-            <ReactCountryFlag countryCode={flagCountries[language]} svg style={{ width: "24px", height: "16px" }} />
+          <div className="relative">
+            <button
+              onClick={() => setShowLangMenu(!showLangMenu)}
+              className="flex items-center space-x-1 p-2"
+            >
+              <ReactCountryFlag countryCode={flagCountries[language]} svg style={{ width: "24px", height: "16px" }} />
+              <span className="text-white text-sm">{languageDisplayNames[language]}</span>
+            </button>
+
+            {showLangMenu && (
+              <div className="absolute top-full mt-2 right-0 bg-black border border-[#E6C85D]/30 rounded-2xl shadow-2xl overflow-hidden z-50 min-w-[120px]">
+                {Object.keys(flagCountries).map(lang => (
+                  <button
+                    key={lang}
+                    onClick={() => {
+                      changeLanguage(lang);
+                      setShowLangMenu(false);
+                    }}
+                    className={`w-full px-4 py-3 flex items-center justify-center space-x-2 transition-all rounded-lg hover:bg-[#E6C85D]/20 ${
+                      language === lang ? "bg-[#E6C85D]/30 text-white font-semibold" : "text-gray-300"
+                    }`}
+                  >
+                    <ReactCountryFlag countryCode={flagCountries[lang]} svg style={{ width: "24px", height: "16px" }} />
+                    <span>{languageDisplayNames[lang]}</span>
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -173,7 +205,7 @@ const Navbar = () => {
                 }`}
               >
                 <ReactCountryFlag countryCode={flagCountries[lang]} svg style={{ width: "24px", height: "16px" }} />
-                <span>{lang.toUpperCase()}</span>
+                <span>{languageDisplayNames[lang]}</span>
               </button>
             ))}
 

@@ -5,7 +5,7 @@ export const translations = {
       home: "Domů",
       allEat: "All You Can Eat",
       menu: "Menu",
-      event: "Události",
+      event: "Event",
       gallery: "Galerie",
       contact: "Kontakt",
       reserve: "Rezervovat"
@@ -105,7 +105,7 @@ export const translations = {
       event: "Events",
       gallery: "Gallery",
       contact: "Contact",
-      reserve: "Reserve"
+      reserve: "Reservation"
     },
     // AboutUs
     about: {
