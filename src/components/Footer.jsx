@@ -6,15 +6,17 @@ const Footer = () => {
   const { t } = useLanguage();
   
   return (
-    <footer className="relative py-16 px-4 bg-gradient-to-t from-black via-red-950/30 to-gray-900 text-white overflow-hidden border-t border-red-900/30">
-      {/* Glow blobs - RED */}
-      <div className="absolute -top-32 -left-32 w-96 h-96 bg-red-600/20 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-yellow-600/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
+    <footer className="relative py-16 px-4 bg-black text-white overflow-hidden border-t border-red-800/30">
+      {/* Red subtle shadow overlays - matching Main */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -top-32 -left-32 w-96 h-96 bg-red-600/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-red-500/20 rounded-full blur-3xl animate-pulse" />
+      </div>
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
         {/* LOGO / NAME */}
         <div className="space-y-4">
-          <h2 className="text-2xl font-extrabold bg-gradient-to-r from-red-500 to-yellow-400 bg-clip-text text-transparent">
+          <h2 className="text-2xl font-extrabold bg-gradient-to-r from-red-400 to-yellow-300 bg-clip-text text-transparent">
             Nori Restaurant
           </h2>
           <p className="text-gray-400 max-w-sm">
@@ -46,7 +48,7 @@ const Footer = () => {
       </div>
 
       {/* COPYRIGHT */}
-      <div className="mt-16 border-t border-red-900/30 pt-6 text-center text-gray-400 text-sm relative z-10">
+      <div className="mt-16 border-t border-red-800/30 pt-6 text-center text-gray-400 text-sm relative z-10">
         &copy; {new Date().getFullYear()} Nori Restaurant. {t.footer.copyright}
       </div>
     </footer>

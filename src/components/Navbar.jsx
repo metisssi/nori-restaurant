@@ -114,9 +114,14 @@ const Navbar = () => {
             </div>
 
             {/* Reservation button */}
-            <button onClick={() => handleNavClick("reservation")} className={gradientBtn}>
+            <a 
+              href="https://www.bookiopro.com/nori-restaurant/rs-widget?lang=cs&c1=79d9c3&c2=fbf5f0&c3=453a3a"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={gradientBtn}
+            >
               {t.nav.reserve}
-            </button>
+            </a>
           </div>
         </div>
 
@@ -209,9 +214,14 @@ const Navbar = () => {
               </button>
             ))}
 
-            <button onClick={() => handleNavClick("reservation")} className={gradientBtn + " w-full text-center"}>
+            <a
+              href="https://www.bookiopro.com/nori-restaurant/rs-widget?lang=cs&c1=79d9c3&c2=fbf5f0&c3=453a3a"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={gradientBtn + " w-full text-center block"}
+            >
               {t.nav.reserve}
-            </button>
+            </a>
           </div>
         </div>
       </div>
