@@ -26,10 +26,10 @@ export const translations = {
     // Alleat
     alleat: {
       title: "All You Can Eat",
-      heading: "Neomezený",
+      heading: "Neomezený asijský",
       headingAccent: "gurmánský",
       heading2: "zážitek",
-      description: "Vyberte si z našeho širokého výběru sushi a asijských specialit. Užijte si autentické chutě v elegantním prostředí.",
+      description: "Vítejte v restauraci, kde se potkává rozmanitost Asie s konceptem All You Can Eat. Dopřejte si neomezené množství čerstvého sushi, autentických wok pokrmů, šťavnatého grillu a široký výběr dalších asijských specialit.\n\nOchutnávejte bez omezení, kombinujte chutě a objevujte nové oblíbené pokrmy. Všechny chody – od polévky až po dezert – připravujeme z kvalitních surovin, s důrazem na čerstvost a výraznou chuť.\n\nU nás nejde jen o jídlo – jde o zážitek, který si vychutnáte znovu a znovu.",
       button: "Zobrazit menu (PDF)",
       subtitle: "All You Can Eat",
       subtitle2: "Neomezené možnosti čekají na vás"
@@ -64,9 +64,40 @@ export const translations = {
     // Event
     event: {
       title: "Události & Akce",
-      heading: "Zažijte naše",
-      headingAccent: "speciální akce",
-      description: "Pořádáme tematické večery, degustace a speciální akce pro naše hosty. Rezervujte si místo a nechte se hýčkat autentickými chutěmi a atmosférou.",
+      heading: "Hledáte prostor, který nadchne",
+      headingAccent: "chuťové buňky i atmosférou?",
+      description: "NORI Restaurant v pražském Smíchově promění každou událost v nezapomenutelný asijský zážitek.",
+      whyNori: "Proč právě NORI?",
+      features: {
+        spaces: {
+          title: "Variabilní prostory",
+          description: "Velký sál – 80+ hostů, vlastní bar a technika pro prezentace."
+        },
+        menu: {
+          title: "Flexibilní menu na základě domluvy",
+          description: "All-you-can-eat bufet pro všechny chutě. Vegetariánské, bezlepkové i fusion speciality na míru."
+        },
+        service: {
+          title: "Profesionální servis",
+          description: "Osobní event manažer od prvního hovoru až po poslední dezert."
+        },
+        program: {
+          title: "Doprovodný program",
+          description: "Projekce, ozvučení a Wi-Fi v ceně pronájmu."
+        }
+      },
+      eventTypes: {
+        title: "Typy akcí",
+        corporate: "Firemní večírky, teambuildingy a prezentace",
+        celebrations: "Narozeniny, výročí, svatby",
+        culinary: "Degustační večery a kulinářské workshopy"
+      },
+      howItWorks: {
+        title: "Jak to funguje?",
+        step1: "Kontaktujte nás na +420 724 888 916 nebo info@norirestaurant.cz.",
+        step2: "Sdělte termín, počet hostů a představu o menu. Připravíme Vám nabídku včetně ceny a programu.",
+        step3: "My zařídíme zbytek – vy si jen užijete svou akci!"
+      },
       button: "Rezervovat místo",
       gallery: "Prohlédnout galerii"
     },
@@ -92,7 +123,11 @@ export const translations = {
     footer: {
       description: "Autentický asijský gurmánský zážitek v srdci Prahy. Přijďte ochutnat naše speciality.",
       quickLinks: "Rychlé odkazy",
-      followUs: "Sledujte nás",
+      followUs: "Sociální sítě",
+      contact: "Kontakt",
+      phone: "+420 724 888 916",
+      email: "info@norirestaurant.cz",
+      address: "Nádražní 58/110, Praha 5-Smíchov",
       copyright: "Všechna práva vyhrazena."
     }
   },
@@ -123,10 +158,10 @@ export const translations = {
     // Alleat
     alleat: {
       title: "All You Can Eat",
-      heading: "Unlimited",
+      heading: "Unlimited Asian",
       headingAccent: "gourmet",
       heading2: "experience",
-      description: "Choose from our wide selection of sushi and Asian specialties. Enjoy authentic flavors in an elegant setting.",
+      description: "Welcome to a restaurant where the diversity of Asia meets the All You Can Eat concept. Treat yourself to unlimited amounts of fresh sushi, authentic wok dishes, juicy grills, and a wide selection of other Asian specialties.\n\nTaste without limits, combine flavors, and discover new favorite dishes. All courses – from soup to dessert – are prepared from quality ingredients, with an emphasis on freshness and distinctive taste.\n\nFor us, it's not just about food – it's about an experience you'll enjoy again and again.",
       button: "View Menu (PDF)",
       subtitle: "All You Can Eat",
       subtitle2: "Unlimited possibilities await you"
@@ -161,9 +196,40 @@ export const translations = {
     // Event
     event: {
       title: "Events & Activities",
-      heading: "Experience our",
-      headingAccent: "special events",
-      description: "We host themed evenings, tastings, and special events for our guests. Reserve your spot and be pampered with authentic flavors and atmosphere.",
+      heading: "Looking for a space that will delight",
+      headingAccent: "taste buds and atmosphere?",
+      description: "NORI Restaurant in Prague's Smíchov will turn any event into an unforgettable Asian experience.",
+      whyNori: "Why NORI?",
+      features: {
+        spaces: {
+          title: "Flexible Spaces",
+          description: "Large hall – 80+ guests, own bar and presentation technology."
+        },
+        menu: {
+          title: "Flexible Menu by Agreement",
+          description: "All-you-can-eat buffet for all tastes. Vegetarian, gluten-free and fusion specialties to order."
+        },
+        service: {
+          title: "Professional Service",
+          description: "Personal event manager from first call to last dessert."
+        },
+        program: {
+          title: "Accompanying Program",
+          description: "Projection, sound system and Wi-Fi included in rental price."
+        }
+      },
+      eventTypes: {
+        title: "Event Types",
+        corporate: "Corporate parties, team buildings and presentations",
+        celebrations: "Birthdays, anniversaries, weddings",
+        culinary: "Tasting evenings and culinary workshops"
+      },
+      howItWorks: {
+        title: "How Does It Work?",
+        step1: "Contact us at +420 724 888 916 or info@norirestaurant.cz.",
+        step2: "Tell us the date, number of guests and menu idea. We'll prepare an offer including price and program.",
+        step3: "We'll take care of the rest – you just enjoy your event!"
+      },
       button: "Reserve a Spot",
       gallery: "View Gallery"
     },
@@ -189,7 +255,11 @@ export const translations = {
     footer: {
       description: "Authentic Asian gourmet experience in the heart of Prague. Come taste our specialties.",
       quickLinks: "Quick Links",
-      followUs: "Follow Us",
+      followUs: "Social Media",
+      contact: "Contact",
+      phone: "+420 724 888 916",
+      email: "info@norirestaurant.cz",
+      address: "Nádražní 58/110, Praha 5-Smíchov",
       copyright: "All rights reserved."
     }
   },
@@ -220,10 +290,10 @@ export const translations = {
     // Alleat
     alleat: {
       title: "All You Can Eat",
-      heading: "Безграничный",
+      heading: "Безграничный азиатский",
       headingAccent: "гурманский",
       heading2: "опыт",
-      description: "Выберите из нашего широкого ассортимента суши и азиатских деликатесов. Насладитесь аутентичными вкусами в элегантной обстановке.",
+      description: "Добро пожаловать в ресторан, где разнообразие Азии встречается с концепцией All You Can Eat. Побалуйте себя неограниченным количеством свежих суши, аутентичных вок-блюд, сочного гриля и широким выбором других азиатских деликатесов.\n\nПробуйте без ограничений, комбинируйте вкусы и открывайте новые любимые блюда. Все блюда – от супа до десерта – мы готовим из качественных ингредиентов, с акцентом на свежесть и выразительный вкус.\n\nУ нас дело не только в еде – это опыт, который вы будете наслаждаться снова и снова.",
       button: "Посмотреть меню (PDF)",
       subtitle: "All You Can Eat",
       subtitle2: "Безграничные возможности ждут вас"
@@ -258,9 +328,40 @@ export const translations = {
     // Event
     event: {
       title: "События и мероприятия",
-      heading: "Испытайте наши",
-      headingAccent: "особые события",
-      description: "Мы проводим тематические вечера, дегустации и специальные мероприятия для наших гостей. Забронируйте место и позвольте себе насладиться аутентичными вкусами и атмосферой.",
+      heading: "Ищете пространство, которое восхитит",
+      headingAccent: "вкусовые рецепторы и атмосферой?",
+      description: "Ресторан NORI в пражском районе Смихов превратит любое мероприятие в незабываемый азиатский опыт.",
+      whyNori: "Почему именно NORI?",
+      features: {
+        spaces: {
+          title: "Вариативные пространства",
+          description: "Большой зал – 80+ гостей, собственный бар и техника для презентаций."
+        },
+        menu: {
+          title: "Гибкое меню по договоренности",
+          description: "All-you-can-eat буфет на любой вкус. Вегетарианские, безглютеновые и фьюжн-деликатесы на заказ."
+        },
+        service: {
+          title: "Профессиональный сервис",
+          description: "Личный event-менеджер от первого звонка до последнего десерта."
+        },
+        program: {
+          title: "Сопутствующая программа",
+          description: "Проекция, озвучивание и Wi-Fi включены в стоимость аренды."
+        }
+      },
+      eventTypes: {
+        title: "Типы мероприятий",
+        corporate: "Корпоративные вечеринки, тимбилдинги и презентации",
+        celebrations: "Дни рождения, юбилеи, свадьбы",
+        culinary: "Дегустационные вечера и кулинарные мастер-классы"
+      },
+      howItWorks: {
+        title: "Как это работает?",
+        step1: "Свяжитесь с нами по телефону +420 724 888 916 или info@norirestaurant.cz.",
+        step2: "Сообщите дату, количество гостей и идею меню. Мы подготовим предложение с ценой и программой.",
+        step3: "Мы позаботимся об остальном – вы просто наслаждайтесь своим мероприятием!"
+      },
       button: "Забронировать место",
       gallery: "Посмотреть галерею"
     },
@@ -286,7 +387,11 @@ export const translations = {
     footer: {
       description: "Аутентичный азиатский гастрономический опыт в сердце Праги. Приходите попробовать наши деликатесы.",
       quickLinks: "Быстрые ссылки",
-      followUs: "Следите за нами",
+      followUs: "Социальные сети",
+      contact: "Контакты",
+      phone: "+420 724 888 916",
+      email: "info@norirestaurant.cz",
+      address: "Nádražní 58/110, Praha 5-Smíchov",
       copyright: "Все права защищены."
     }
   }

@@ -15,7 +15,7 @@ const Navbar = () => {
     { name: t.nav.menu, path: "/", sectionId: "menu" },
     { name: t.nav.event, path: "/", sectionId: "event" },
     { name: t.nav.gallery, path: "/", sectionId: "gallery" },
-    { name: t.nav.contact, path: "/", sectionId: "reservation" },
+    { name: t.nav.contact, path: "/", sectionId: "footer" },
   ];
 
   const handleNavClick = (sectionId) => {

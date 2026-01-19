@@ -8,19 +8,18 @@ const Main = () => {
 
   const slides = [
     {
-      image: "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=1200&h=800&fit=crop",
-      alt: "Sushi platter",
+      image: "/social-cat-instagram_instagram_1.jpg",
+      alt: "Nori Restaurant Photo 1",
     },
     {
-      image: "https://images.unsplash.com/photo-1553621042-f6e147245754?w=1200&h=800&fit=crop",
-      alt: "Restaurant interior",
+      image: "/social-cat-instagram_instagram_2.jpg",
+      alt: "Nori Restaurant Photo 2",
     },
     {
-      image: "https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=1200&h=800&fit=crop",
-      alt: "Fresh sushi",
+      image: "/social-cat-instagram_instagram_3.jpg",
+      alt: "Nori Restaurant Photo 3",
     },
   ];
-
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 

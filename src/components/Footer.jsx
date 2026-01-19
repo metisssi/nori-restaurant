@@ -1,12 +1,12 @@
 import React from "react";
-import { Facebook, Instagram, Twitter } from "lucide-react";
+import { Facebook, Instagram, Phone, Mail, MapPin } from "lucide-react";
 import { useLanguage } from "../context/Languagecontext";
 
 const Footer = () => {
   const { t } = useLanguage();
   
   return (
-    <footer className="relative py-16 px-4 bg-black text-white overflow-hidden border-t border-red-800/30">
+    <footer id="footer" className="relative py-16 px-4 bg-black text-white overflow-hidden border-t border-red-800/30">
       {/* Red subtle shadow overlays - matching Main */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-32 -left-32 w-96 h-96 bg-red-600/20 rounded-full blur-3xl animate-pulse" />
@@ -14,15 +14,6 @@ const Footer = () => {
       </div>
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
-        {/* LOGO / NAME */}
-        <div className="space-y-4">
-          <h2 className="text-2xl font-extrabold bg-gradient-to-r from-red-400 to-yellow-300 bg-clip-text text-transparent">
-            Nori Restaurant
-          </h2>
-          <p className="text-gray-400 max-w-sm">
-            {t.footer.description}
-          </p>
-        </div>
 
         {/* QUICK LINKS */}
         <div>
@@ -32,17 +23,63 @@ const Footer = () => {
             <li><a href="#menu" className="hover:text-red-400 transition-colors">{t.nav.menu}</a></li>
             <li><a href="#event" className="hover:text-red-400 transition-colors">{t.nav.event}</a></li>
             <li><a href="#gallery" className="hover:text-red-400 transition-colors">{t.nav.gallery}</a></li>
-            <li><a href="#reservation" className="hover:text-red-400 transition-colors">{t.nav.contact}</a></li>
+          </ul>
+        </div>
+
+        {/* CONTACT */}
+        <div>
+          <h3 className="text-xl font-semibold mb-4 text-red-400">{t.footer.contact}</h3>
+          <ul className="space-y-3 text-gray-300">
+            <li className="flex items-center space-x-2">
+              <Phone size={18} className="text-red-400" />
+              <a href="tel:+420724888916" className="hover:text-red-400 transition-colors">{t.footer.phone}</a>
+            </li>
+            <li className="flex items-center space-x-2">
+              <Mail size={18} className="text-red-400" />
+              <a href="mailto:info@norirestaurant.cz" className="hover:text-red-400 transition-colors">{t.footer.email}</a>
+            </li>
+            <li className="flex items-center space-x-2">
+              <MapPin size={18} className="text-red-400" />
+              <span>{t.footer.address}</span>
+            </li>
           </ul>
         </div>
 
         {/* SOCIALS */}
         <div>
           <h3 className="text-xl font-semibold mb-4 text-red-400">{t.footer.followUs}</h3>
-          <div className="flex space-x-4 text-gray-300">
-            <a href="#" className="hover:text-red-400 transition-colors"><Facebook size={24} /></a>
-            <a href="#" className="hover:text-red-400 transition-colors"><Instagram size={24} /></a>
-            <a href="#" className="hover:text-red-400 transition-colors"><Twitter size={24} /></a>
+          <div className="flex flex-col space-y-3 text-gray-300">
+            <a 
+              href="https://www.instagram.com/nori_praha/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 hover:text-red-400 transition-colors group"
+            >
+              <Instagram size={24} className="group-hover:scale-110 transition-transform" />
+              <span>Instagram</span>
+            </a>
+            <a 
+              href="https://www.tiktok.com/@nori_praha?_r=1&_t=ZN-92z96lBiHME" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 hover:text-red-400 transition-colors group"
+            >
+              <svg 
+                className="w-6 h-6 group-hover:scale-110 transition-transform" 
+                viewBox="0 0 24 24" 
+                fill="currentColor"
+              >
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+              </svg>
+              <span>TikTok</span>
+            </a>
+            <a 
+              href="#" 
+              className="flex items-center space-x-2 text-gray-500 cursor-not-allowed"
+            >
+              <Facebook size={24} />
+              <span>Facebook (coming soon)</span>
+            </a>
           </div>
         </div>
       </div>
