@@ -3,14 +3,14 @@ import { motion } from "framer-motion";
 import { useLanguage } from "../context/Languagecontext";
 
 const images = [
-  "/gallery1.jpg",
-  "/gallery2.jpg",
-  "/gallery3.jpg",
-  "/gallery4.jpg",
-  "/gallery5.jpg",
-  "/gallery6.jpg",
-  "/gallery7.jpg",
-  "/gallery8.jpg",
+  "/galerie1.webp",
+  "/galerie2.webp",
+  "/galerie5.webp",
+  "/galerie6.webp",
+  "/galerie8.webp",
+  "/galerie9.webp",
+  "/galerie11.webp",
+  "/galerie12.webp",
 ];
 
 const Gallery = () => {

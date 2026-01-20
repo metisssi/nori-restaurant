@@ -41,13 +41,13 @@ const Navbar = () => {
   const flagCountries = {
     cs: "CZ",
     en: "GB",
-    ru: "RU",
+    ua: "UA",  // Changed from ru: "RU"
   };
 
   const languageDisplayNames = {
     cs: "CZ",
     en: "EN",
-    ru: "RU",
+    ua: "UA",  // Changed from ru: "RU"
   };
 
   const gradientBtn =
@@ -101,9 +101,8 @@ const Navbar = () => {
                         changeLanguage(lang);
                         setShowLangMenu(false);
                       }}
-                      className={`w-full px-4 py-3 flex items-center justify-center space-x-2 transition-all rounded-lg hover:bg-[#E6C85D]/20 ${
-                        language === lang ? "bg-[#E6C85D]/30 text-black font-semibold" : "text-gray-300"
-                      }`}
+                      className={`w-full px-4 py-3 flex items-center justify-center space-x-2 transition-all rounded-lg hover:bg-[#E6C85D]/20 ${language === lang ? "bg-[#E6C85D]/30 text-black font-semibold" : "text-gray-300"
+                        }`}
                     >
                       <ReactCountryFlag countryCode={flagCountries[lang]} svg style={{ width: "24px", height: "16px" }} />
                       <span>{languageDisplayNames[lang]}</span>
@@ -114,7 +113,7 @@ const Navbar = () => {
             </div>
 
             {/* Reservation button */}
-            <a 
+            <a
               href="https://www.bookiopro.com/nori-restaurant/rs-widget?lang=cs&c1=79d9c3&c2=fbf5f0&c3=453a3a"
               target="_blank"
               rel="noopener noreferrer"
@@ -160,9 +159,8 @@ const Navbar = () => {
                       changeLanguage(lang);
                       setShowLangMenu(false);
                     }}
-                    className={`w-full px-4 py-3 flex items-center justify-center space-x-2 transition-all rounded-lg hover:bg-[#E6C85D]/20 ${
-                      language === lang ? "bg-[#E6C85D]/30 text-white font-semibold" : "text-gray-300"
-                    }`}
+                    className={`w-full px-4 py-3 flex items-center justify-center space-x-2 transition-all rounded-lg hover:bg-[#E6C85D]/20 ${language === lang ? "bg-[#E6C85D]/30 text-white font-semibold" : "text-gray-300"
+                      }`}
                   >
                     <ReactCountryFlag countryCode={flagCountries[lang]} svg style={{ width: "24px", height: "16px" }} />
                     <span>{languageDisplayNames[lang]}</span>
@@ -203,11 +201,10 @@ const Navbar = () => {
                   changeLanguage(lang);
                   setIsOpen(false);
                 }}
-                className={`w-full px-4 py-3 flex items-center justify-center space-x-2 rounded-full transition-all ${
-                  language === lang
+                className={`w-full px-4 py-3 flex items-center justify-center space-x-2 rounded-full transition-all ${language === lang
                     ? "bg-gradient-to-r from-[#F6E27A] via-[#E6C85D] to-[#B89D4F] text-black font-semibold"
                     : "text-gray-300 hover:text-white hover:bg-white/10"
-                }`}
+                  }`}
               >
                 <ReactCountryFlag countryCode={flagCountries[lang]} svg style={{ width: "24px", height: "16px" }} />
                 <span>{languageDisplayNames[lang]}</span>

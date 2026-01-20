@@ -8,15 +8,15 @@ const Main = () => {
 
   const slides = [
     {
-      image: "/social-cat-instagram_instagram_1.jpg",
+      image: "/main1.webp",
       alt: "Nori Restaurant Photo 1",
     },
     {
-      image: "/social-cat-instagram_instagram_2.jpg",
+      image: "/main2.webp",
       alt: "Nori Restaurant Photo 2",
     },
     {
-      image: "/social-cat-instagram_instagram_3.jpg",
+      image: "/main3.webp",
       alt: "Nori Restaurant Photo 3",
     },
   ];
@@ -66,7 +66,7 @@ const Main = () => {
             {/* Interior Image + Reservation */}
             <div className="mt-8 relative rounded-2xl overflow-hidden h-64 group shadow-lg border-2 border-red-800/30">
               <img
-                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=300&fit=crop"
+                src="./reservation.webp"
                 alt="Restaurant interior"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />

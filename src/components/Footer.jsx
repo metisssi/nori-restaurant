@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-red-500/20 rounded-full blur-3xl animate-pulse" />
       </div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
 
         {/* QUICK LINKS */}
         <div>
@@ -82,6 +82,24 @@ const Footer = () => {
             </a>
           </div>
         </div>
+
+        {/* GOOGLE MAP */}
+        <div>
+          <h3 className="text-xl font-semibold mb-4 text-red-400">{t.footer.location || "Location"}</h3>
+          <div className="w-full h-48 rounded-lg overflow-hidden border border-red-800/30">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2561.0838476449867!2d14.404461776624893!3d50.07291671343977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b94e5f4f2e1f1%3A0x7e1e8f5e7e8f5e7e!2zTsOhZHJhxb5uw60gNTgvMTEwLCAxNTAgMDAgUHJhaGEgNS1TbcOtY2hvdiwgQ3plY2hpYQ!5e0!3m2!1sen!2scz!4v1234567890"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Nori Restaurant Location"
+            ></iframe>
+          </div>
+        </div>
+
       </div>
 
       {/* COPYRIGHT */}

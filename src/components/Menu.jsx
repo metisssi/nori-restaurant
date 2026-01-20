@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Flame } from "lucide-react";
+import { Flame, ChevronDown } from "lucide-react";
 import { useLanguage } from "../context/Languagecontext";
 
 const Menu = () => {
@@ -31,6 +31,13 @@ const Menu = () => {
       image: "/veggie-roll.jpg",
     },
   ];
+
+  const scrollToEvent = () => {
+    const eventSection = document.getElementById("event");
+    if (eventSection) {
+      eventSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <section
@@ -163,6 +170,22 @@ const Menu = () => {
           <span className="absolute inset-0 rounded-full bg-orange-500/30 blur-2xl animate-pulse"></span>
         </motion.button>
       </div>
+
+      {/* SCROLL DOWN BUTTON */}
+      <motion.button
+        onClick={scrollToEvent}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 group cursor-pointer z-20"
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1 }}
+      >
+        <div className="flex flex-col items-center space-y-2">
+          <ChevronDown 
+            size={40} 
+            className="text-orange-400 animate-bounce group-hover:text-yellow-400 transition-colors duration-300" 
+          />
+        </div>
+      </motion.button>
     </section>
   );
 };

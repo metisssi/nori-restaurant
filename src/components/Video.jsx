@@ -17,7 +17,7 @@ const Video = () => {
         className="absolute top-0 left-0 w-full h-full object-cover"
         preload="auto"
       >
-        <source src="/main-video.mp4" type="video/mp4" />
+        <source src="/main.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
