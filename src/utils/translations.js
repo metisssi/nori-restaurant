@@ -129,7 +129,7 @@ export const translations = {
       email: "info@norirestaurant.cz",
       address: "Nádražní 58/110, Praha 5-Smíchov",
       copyright: "Všechna práva vyhrazena.",
-      location: "Локація"
+      location: "Lokalita"
     }
   },
   en: {
