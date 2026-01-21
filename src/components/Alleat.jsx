@@ -47,7 +47,7 @@ const Alleat = () => {
 
         {/* HEADER */}
         <motion.div
-          className="space-y-6 text-center text-white max-w-4xl"
+          className="space-y-6 text-center text-white max-w-4xl px-4"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -58,7 +58,7 @@ const Alleat = () => {
             <Sparkles className="w-5 h-5 animate-pulse" />
           </h5>
 
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight">
             {t.alleat.heading}{" "}
             <span className="bg-gradient-to-r from-red-400 via-yellow-400 to-red-400 bg-clip-text text-transparent animate-pulse">
               {t.alleat.headingAccent}
@@ -69,12 +69,12 @@ const Alleat = () => {
 
         {/* DESCRIPTION IN BEAUTIFUL CARD */}
         <motion.div
-          className="w-full max-w-5xl bg-gradient-to-br from-red-900/20 via-black to-red-900/20 border border-red-800/30 rounded-3xl p-8 md:p-12 shadow-2xl hover:border-red-500/50 transition-all duration-500"
+          className="w-full max-w-5xl bg-gradient-to-br from-red-900/20 via-black to-red-900/20 border border-red-800/30 rounded-3xl p-6 sm:p-8 md:p-12 shadow-2xl hover:border-red-500/50 transition-all duration-500"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <p className="text-base sm:text-lg leading-relaxed text-gray-300 whitespace-pre-line text-center">
+          <p className="text-sm sm:text-base md:text-lg leading-relaxed text-gray-300 whitespace-pre-line text-center">
             {t.alleat.description}
           </p>
         </motion.div>
@@ -82,7 +82,7 @@ const Alleat = () => {
         {/* CTA BUTTON */}
         <motion.button
           onClick={openModal}
-          className="mt-8 inline-flex items-center justify-center px-10 py-5 bg-gradient-to-r from-red-600 via-red-700 to-red-600 text-white font-bold text-lg rounded-full shadow-2xl hover:shadow-red-500/50 transition-all hover:scale-105 relative border-2 border-red-500/30 group overflow-hidden"
+          className="mt-8 inline-flex items-center justify-center px-8 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-red-600 via-red-700 to-red-600 text-white font-bold text-base sm:text-lg rounded-full shadow-2xl hover:shadow-red-500/50 transition-all hover:scale-105 relative border-2 border-red-500/30 group overflow-hidden"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
@@ -100,7 +100,7 @@ const Alleat = () => {
 
         {/* DECORATIVE ELEMENTS */}
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-6xl mt-12"
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-6xl mt-12 px-2"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -113,15 +113,15 @@ const Alleat = () => {
           ].map((item, index) => (
             <motion.div
               key={index}
-              className="group bg-gradient-to-br from-gray-900 to-red-950/20 border border-red-800/20 rounded-2xl p-6 text-center hover:border-red-500/40 transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-red-500/10"
+              className="group bg-gradient-to-br from-gray-900 to-red-950/20 border border-red-800/20 rounded-2xl p-4 sm:p-6 text-center hover:border-red-500/40 transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-red-500/10"
               initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
               whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
               transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
             >
-              <div className="text-5xl mb-3 group-hover:scale-110 transition-transform duration-300">
+              <div className="text-4xl sm:text-5xl mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-300">
                 {item.emoji}
               </div>
-              <p className="text-gray-400 font-semibold group-hover:text-red-400 transition-colors duration-300">
+              <p className="text-sm sm:text-base text-gray-400 font-semibold group-hover:text-red-400 transition-colors duration-300">
                 {item.label}
               </p>
             </motion.div>
@@ -130,24 +130,24 @@ const Alleat = () => {
 
         {/* FINAL MESSAGE */}
         <motion.div
-          className="mt-8 text-center"
+          className="mt-8 text-center px-4"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
         >
-          <p className="text-xl md:text-2xl font-bold bg-gradient-to-r from-red-400 via-yellow-400 to-red-400 bg-clip-text text-transparent">
+          <p className="text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-red-400 via-yellow-400 to-red-400 bg-clip-text text-transparent">
             {t.alleat.subtitle}
           </p>
-          <p className="text-gray-400 mt-2">
+          <p className="text-sm sm:text-base text-gray-400 mt-2">
             {t.alleat.subtitle2}
           </p>
         </motion.div>
       </div>
 
       {/* SCROLL DOWN BUTTON */}
-      <motion.button
+      <motion.div
         onClick={scrollToMenu}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 group cursor-pointer z-20"
+        className="absolute bottom-8 left-0 right-0 flex justify-center group cursor-pointer z-20"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1 }}
@@ -158,7 +158,7 @@ const Alleat = () => {
             className="text-red-400 animate-bounce group-hover:text-yellow-400 transition-colors duration-300" 
           />
         </div>
-      </motion.button>
+      </motion.div>
 
       {/* FULLSCREEN MODAL WITH IMAGE GALLERY */}
       <AnimatePresence>
