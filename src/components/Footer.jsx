@@ -36,7 +36,7 @@ const Footer = () => {
             </li>
             <li className="flex items-center space-x-2">
               <Mail size={18} className="text-red-400" />
-              <a href="mailto:info@norirestaurant.cz" className="hover:text-red-400 transition-colors">{t.footer.email}</a>
+              <a href="mailto:norirestaurant2024@gmail.com" className="hover:text-red-400 transition-colors">{t.footer.email}</a>
             </li>
             <li className="flex items-center space-x-2">
               <MapPin size={18} className="text-red-400" />
@@ -74,11 +74,13 @@ const Footer = () => {
               <span>TikTok</span>
             </a>
             <a 
-              href="#" 
-              className="flex items-center space-x-2 text-gray-500 cursor-not-allowed"
+              href="https://www.facebook.com/share/17uVatwHve/?mibextid=wwXIfr" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 hover:text-red-400 transition-colors group"
             >
-              <Facebook size={24} />
-              <span>Facebook (coming soon)</span>
+              <Facebook size={24} className="group-hover:scale-110 transition-transform" />
+              <span>Facebook</span>
             </a>
           </div>
         </div>

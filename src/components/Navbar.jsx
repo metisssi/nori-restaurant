@@ -38,17 +38,15 @@ const Navbar = () => {
     }, 100);
   };
 
-  const flagCountries = {
-    cs: "CZ",
-    en: "GB",
-    ua: "UA",  // Changed from ru: "RU"
-  };
+ const flagCountries = {
+  cs: "CZ",
+  en: "GB",
+};
 
-  const languageDisplayNames = {
-    cs: "CZ",
-    en: "EN",
-    ua: "UA",  // Changed from ru: "RU"
-  };
+const languageDisplayNames = {
+  cs: "CZ",
+  en: "EN",
+};
 
   const gradientBtn =
     "px-5 py-2 rounded-full font-semibold bg-gradient-to-r from-[#F6E27A] via-[#E6C85D] to-[#B89D4F] text-black shadow-lg hover:scale-105 transition-transform";
